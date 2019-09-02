@@ -2,6 +2,7 @@ package pbast
 
 type Enum struct {
 	Name    string
+	Options []*Option
 	Comment Comment
 	Fields  []*EnumField
 }
@@ -17,6 +18,14 @@ func (e *Enum) AddField(f *EnumField) *Enum {
 		return e
 	}
 	e.Fields = append(e.Fields, f)
+	return e
+}
+
+func (e *Enum) AddOption(o *Option) *Enum {
+	if o == nil {
+		return e
+	}
+	e.Options = append(e.Options, o)
 	return e
 }
 

@@ -215,6 +215,10 @@ func (p *printer) printEnum(w io.Writer, e *pbast.Enum) {
 	// name
 	fmt.Fprintf(w, "enum %s {", e.Name)
 	fmt.Fprintln(w)
+	// options
+	for _, o := range e.Options {
+		p.Fprint(w, o)
+	}
 	// fields
 	for _, f := range e.Fields {
 		p.Fprint(pbast.NewSpaceWriter(w, shift), f)
