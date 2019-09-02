@@ -1,12 +1,12 @@
 package pbast
 
 type Message struct {
-	Name     string
-	Comment  Comment
-	Fields   []*MessageField
-	Enums    []*Enum
-	Messages []*Message
-	OneOfs   []*OneOf
+	Name     string          `json:"name"`
+	Comment  Comment         `json:"comment"`
+	Fields   []*MessageField `json:"fields"`
+	Enums    []*Enum         `json:"enums"`
+	Messages []*Message      `json:"messages"`
+	OneOfs   []*OneOf        `json:"oneOfs"`
 }
 
 func NewMessage(name string) *Message {
@@ -63,17 +63,17 @@ func (m *Message) AddType(t Type) {
 }
 
 type MessageField struct {
-	Repeated bool
-	Type     string
-	Name     string
-	Index    int
-	Options  []*FieldOption
-	Comment  Comment
+	Repeated bool           `json:"repeated"`
+	Type     string         `json:"type"`
+	Name     string         `json:"name"`
+	Index    int            `json:"index"`
+	Options  []*FieldOption `json:"options"`
+	Comment  Comment        `json:"comment"`
 }
 
 type FieldOption struct {
-	Name  string
-	Value string
+	Name  string `json:"name"`
+	Value string `json:"value"`
 }
 
 func NewMessageField(t Type, name string, index int) *MessageField {

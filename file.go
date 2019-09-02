@@ -1,7 +1,7 @@
 package pbast
 
 type File struct {
-	Syntax   Syntax
+	Syntax   Syntax 
 	Package  Package
 	Comment  Comment
 	Imports  []*Import

@@ -1,10 +1,10 @@
 package pbast
 
 type Enum struct {
-	Name    string
-	Options []*Option
-	Comment Comment
-	Fields  []*EnumField
+	Name    string       `json:"name"`
+	Options []*Option    `json:"options"`
+	Comment Comment      `json:"comment"`
+	Fields  []*EnumField `json:"fields"`
 }
 
 func NewEnum(name string) *Enum {

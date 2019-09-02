@@ -57,9 +57,9 @@ func NewPackage(name string) Package {
 }
 
 type Option struct {
-	Name string
+	Name string `json:"name"`
 	// TODO: Revisit for type safety
-	Value string
+	Value string `json:"value"`
 }
 
 func NewOption(name, value string) *Option {
@@ -70,9 +70,9 @@ func NewOption(name, value string) *Option {
 }
 
 type OneOf struct {
-	Name    string
-	Comment Comment
-	Fields  []*OneOfField
+	Name    string        `json:"name"`
+	Comment Comment       `json:"comment"`
+	Fields  []*OneOfField `json:"fields"`
 }
 
 func NewOneOf(name string) *OneOf {
@@ -90,11 +90,11 @@ func (o *OneOf) AddField(f *OneOfField) *OneOf {
 }
 
 type OneOfField struct {
-	Type    string
-	Name    string
-	Index   int
-	Comment Comment
-	Options []*Option
+	Type    string    `json:"type"`
+	Name    string    `json:"name"`
+	Index   int       `json:"index"`
+	Comment Comment   `json:"comment"`
+	Options []*Option `json:"options"`
 }
 
 func NewOneOfField(t Type, name string, index int) *OneOfField {
