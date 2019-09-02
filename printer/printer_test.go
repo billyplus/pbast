@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/oshothebig/pbast"
+	"github.com/billyplus/pbast"
 )
 
 var syntax pbast.Syntax
