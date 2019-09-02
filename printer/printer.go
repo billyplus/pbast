@@ -217,7 +217,7 @@ func (p *printer) printEnum(w io.Writer, e *pbast.Enum) {
 	fmt.Fprintln(w)
 	// options
 	for _, o := range e.Options {
-		p.Fprint(pbast.NewSpaceWriter(w, shift), , o)
+		p.Fprint(pbast.NewSpaceWriter(w, shift), o)
 	}
 	// fields
 	for _, f := range e.Fields {

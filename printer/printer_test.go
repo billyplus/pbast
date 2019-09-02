@@ -39,7 +39,7 @@ var table = []struct {
 	},
 	{
 		pbast.NewOption("human", "men"),
-		"human = men;\n",
+		"option (human) = men;\n",
 	},
 	{
 		pbast.NewMessage("human").
