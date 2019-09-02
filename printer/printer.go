@@ -110,7 +110,7 @@ func (p *printer) printPackage(w io.Writer, pkg pbast.Package) {
 }
 
 func (p *printer) printOption(w io.Writer, o *pbast.Option) {
-	fmt.Fprintf(w, "%s = %s;", o.Name, o.Value)
+	fmt.Fprintf(w, "option (%s) = %s;", o.Name, o.Value)
 	fmt.Fprintln(w)
 }
 
