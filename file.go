@@ -1,14 +1,14 @@
 package pbast
 
 type File struct {
-	Syntax   Syntax 
-	Package  Package
-	Comment  Comment
-	Imports  []*Import
-	Options  []*Option
-	Messages []*Message
-	Enums    []*Enum
-	Services []*Service
+	Syntax   Syntax     `json:"-"`
+	Package  Package    `json:"package"`
+	Comment  Comment    `json:"comment"`
+	Imports  []*Import  `json:"imports"`
+	Options  []*Option  `json:"options"`
+	Messages []*Message `json:"messages"`
+	Enums    []*Enum    `json:"enums"`
+	Services []*Service `json:"services"`
 }
 
 func NewFile(p Package) *File {
