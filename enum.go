@@ -42,14 +42,15 @@ func (e *Enum) identifiers() stringSet {
 }
 
 type EnumField struct {
-	Name    string
-	Index   int
-	Options []*EnumValueOption
+	Name    string `json:"name"`
+	Index   int `json:"index"`
+	Comment []string `json:"comment"`
+	Options []*EnumValueOption `json:"option"`
 }
 
 type EnumValueOption struct {
-	Name  string
-	Value string
+	Name  string `json:"name"`
+	Value string `json:"value"`
 }
 
 func NewEnumField(name string, index int) *EnumField {
