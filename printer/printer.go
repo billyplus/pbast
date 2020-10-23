@@ -72,11 +72,6 @@ func (p *printer) printFile(w io.Writer, f *pbast.File) {
 	for _, o := range f.Options {
 		p.Fprint(w, o)
 	}
-	// messages
-	for _, m := range f.Messages {
-		fmt.Fprintln(w)
-		p.Fprint(w, m)
-	}
 	// enums
 	for _, e := range f.Enums {
 		fmt.Fprintln(w)
@@ -87,6 +82,12 @@ func (p *printer) printFile(w io.Writer, f *pbast.File) {
 		fmt.Fprintln(w)
 		p.Fprint(w, s)
 	}
+	// messages
+	for _, m := range f.Messages {
+		fmt.Fprintln(w)
+		p.Fprint(w, m)
+	}
+
 }
 
 func (p *printer) printSyntax(w io.Writer, s pbast.Syntax) {
